@@ -1,0 +1,15 @@
+<form [formGroup]="autherForm" (ngSubmit)="addAuther(autherForm)">
+    <table class="table table-border">
+        <div class="my-2">
+            <label for="name">Auther Name</label>
+            <input type="text" id="name" class="form-control" formControlName="name">
+        </div>
+        <div class="my-2">
+            <label for="nationalityId">Nationality</label>
+            <select  class="form-control" formControlName="nationalityId" id="nationalityId">
+                <option *ngFor="let n of nationalities" [value]="n.nationalityId">{{n.nationality}}</option>
+            </select>
+        </div>
+        <input type="submit" class="btn btn-info">
+    </table>
+</form>

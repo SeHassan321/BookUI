@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import "~bootstrap/dist/css/bootstrap.css"; */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+@import url("https://use.fontawesome.com/releases/v5.0.8/css/all.css");
+/* @import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default'; */
+
+/* $bgColor: #131722;
+$lightBgColor: #24baef;
+$bgTransparent : rgba(36, 186, 239, .6);
+$fontColor: #fff;
+$borderColor: #a8a8a83d;
+$borderHeight: 1px;
+$secondFontColor: #949cb0; */
+
+body {
+    background-color: #131722;
+    font-family: 'Montserrat Alternates', sans-serif;
+
+}
+
+a {
+    font-size: 20px;
+    color: #131722;
+
+}
+
+
+i {
+    color: #131722;
+    margin: 0px 8px;
+    font-size: 20px;
+}
+
+
+
+li{
+    color: #131722;
+}
+
+
+

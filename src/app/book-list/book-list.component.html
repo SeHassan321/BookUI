@@ -1,0 +1,39 @@
+<div class="container-fluid w-75">
+    <div>
+        <input class="my-2" style="margin-right: 20px;" placeholder="Search For Book" type="search"
+            [(ngModel)]="bookSearchObj">
+
+        <input [hidden]="!bookSearchObj" class="btn btn-info" style="margin-right: 20px;"
+            (click)="findBook(bookSearchObj)" value="Search">
+            
+        <input [hidden]="this._bookService.books.length>1" class="btn btn-secondary margin-left"
+            (click)="removeFilter()" value="Remove Filter">
+    </div>
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <th>ID</th>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Number Of Pages</th>
+            <th>Published At</th>
+            <th>Language</th>
+        </thead>
+        <p [hidden]="this._bookService.books.length!=0" class="text-danger"> No Books Founded</p>
+        <tbody>
+            <tr *ngFor="let book of this._bookService.books">
+                <td>{{book.id}}</td>
+                <td [routerLink]="['/bookDetailsComponent',book.id]">{{book.title}}</td>
+                <td [routerLink]="['/bookDetailsComponent',book.id]">{{book.auther}}</td>
+                <td [routerLink]="['/bookDetailsComponent',book.id]">{{book.numberOfPages}}</td>
+                <td [routerLink]="['/bookDetailsComponent',book.id]">{{book.publishedAt | date :'mediumDate'}}</td>
+                <td [routerLink]="['/bookDetailsComponent',book.id]">{{book.language}}</td>
+                <td (click)="delete(book.id)"><span class="btn btn-danger">Delete</span></td>
+                <td (click)="fillData(book)" [routerLink]="['/bookFormComponent',book.id]"><span
+                        class="btn btn-info">Edit Book</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="display: block;">
+        <input class="btn btn-info d-block" [routerLink]="['/bookFormComponent']" value="Add New Book">
+    </div>
+</div>

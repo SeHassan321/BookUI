@@ -1,0 +1,23 @@
+<form [formGroup]="nationalityForm" (ngSubmit)="addNationality(nationalityForm)">
+    <table class="table table-border">
+        <div class="my-2">
+            <label for="name">Nationality </label>
+            <input type="text" id="name" class="form-control" formControlName="name">
+        </div>
+        <div class="my-2">
+            <label for="languageId">Language </label>
+            <select  class="form-control" formControlName="languageId" id="languageId">
+                <option *ngFor="let l of languages" [value]="l.languageId">{{l.language}}</option>
+            </select>
+        </div>
+        <input type="submit" class="btn btn-info">
+    </table>
+</form>
+
+
+<!-- <div class="my-2">
+    <label for="nationalityId">Nationality</label>
+    <select  class="form-control" formControlName="nationalityId" id="nationalityId">
+        <option *ngFor="let n of nationalities" [value]="n.nationalityId">{{n.nationality}}</option>
+    </select>
+</div> -->

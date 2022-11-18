@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <!-- <div>
+        <label id="search" style="display:block; color: rgb(212, 16, 91);">Search For Book By Id</label>
+        <input class="my-2" style="margin-right: 20px;" type="search" [(ngModel)]="bookid" >
+        <input class="btn btn-info" (click)="findBook(bookid)" value="Search">
+        <input [hidden]="this._bookService.books.length>1" class="btn btn-secondary margin-left" (click)="removeFilter()" value="Remove Filter">   
+    </div> -->
+    <div class="row">
+        <div class="col-7">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Nationality</th>
+                        <th>Language</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let a of this.autherservice.authers">
+                        <td>{{a.autherId}}</td>
+                        <td>{{a.auther}}</td>
+                        <td>{{a.nationality}}</td>
+                        <td>{{a.language}}</td>
+                        <td (click)="deleteAuther(a.autherId)"><span class="btn btn-danger">Delete</span></td>
+                        <td ><span [routerLink]="['/addAutherComponent',a.autherId]" class="btn btn-info">Update</span></td>
+                        <!-- <td (click)="delete(book.id)"><span class="btn btn-danger">delete</span></td> -->
+                        <!-- <td (click)="fillData(book)" [routerLink]="['/bookFormComponent',book.id]"  ><span class="btn btn-info">Edit Book</span></td> -->
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col-5 justify-content-end">
+            <div class="d-flex justify-content-center">
+                <app-add-auther></app-add-auther>
+            </div ><br>
+            <div class="d-flex justify-content-center">
+                <app-add-nationality></app-add-nationality>
+            </div><br>
+            <div class="d-flex justify-content-center">
+                <app-add-language></app-add-language>
+            </div>
+        </div>
+
+        <!-- <div style="display: block;">
+        <input class="btn btn-info d-block" [routerLink]="['/bookFormComponent']" value="Add New Book">    
+    </div> -->
+    </div>

@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row" *ngFor="let book of bookDetails">
+        <div class="col-md-4">
+            <img [src]="book.poster" class="w-100">
+
+        </div>
+        <div class="col-md-8">
+            <!-- <img [src]="imgPath+person.profile_path" class="w-100"> -->
+            <h1 style="font-size: 40px; display: block; font-family: auto;"> <span
+                    style="font-size: 60px; font-family: auto;">Overview</span> : When Sheriff Roy
+                Pulsipher finds himself in the afterlife,
+                he joins a special police force and returns to Earth to save humanity from the undead.</h1>
+            <br><br><br><br>
+            <h1 style="font-size: 40px; display: block; font-family: auto;"> title : {{book.title}}</h1>
+            <h2 style="font-size: 40px; font-family: auto;"> auther : {{book.auther}}</h2>
+            <h2 style="font-size: 40px; font-family: auto;"> publishedAt : {{book.publishedAt|date:'mediumDate'}}</h2>
+            <h2 style="font-size: 40px; font-family: auto;"> numberOfPages : {{book.numberOfPages}}</h2>
+        </div>
+    </div>
